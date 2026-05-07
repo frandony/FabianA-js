@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salário Líquido</title>
+</head>
+<body>
+
+<button onclick="calcularSalario()">
+    Calcular Salário Líquido
+</button>
+<button onclick="calcularcarro()">
+    calcular carro
+</button>
+<!-- valor do salario liquido = salario - imposto de renda -->
+
+<script>
+    function calcularSalario() {
+
+        let salario = Number.parseFloat(prompt("Digite o salário:"));
+        
+        let imposto = Number.parseFloat(prompt("Digite o imposto de renda:"));
+
+        let salarioLiquido = salario - imposto;
+
+        alert("O salário líquido é: " + salarioLiquido)
+    }
+    function calcularcarro() {
+        //calcular o consumo de kn por litro // 
+
+        let modelodocarro= (prompt("digite o modelo do seu carro"));
+        let km = parseFloat(prompt("digite quantos kilometros voce percorreu"));
+        let Lgasolina = parseFloat(prompt("digite quantos litros de gasolina consumiu"));
+        consumoporlitro = km /Lgasolina;
+
+        alert("o consumo do carro" + modelodocarro + "é de "+ consumoporlitro.toFixed(2) + "KM/L")
+    }
+    
+</script>
+
+</body>
+</html>
