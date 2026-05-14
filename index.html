@@ -3,41 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salário Líquido</title>
+    <title>Exercícios JavaScript</title>
 </head>
 <body>
+    <h1>Exercícios 1.0</h1>
+    <h2>1.1</h2>
+    <button onclick="calcularSalario()">Calcular Salário Líquido</button>
+    <h2>1.2</h2>
+    <button onclick="calcularcarro()">Calcular Carro</button>
 
-<button onclick="calcularSalario()">
-    Calcular Salário Líquido
-</button>
-<button onclick="calcularcarro()">
-    calcular carro
-</button>
-<!-- valor do salario liquido = salario - imposto de renda -->
-
+    <h1>Exercícios 2.0</h1>
+    <h2>2.1</h2>
+    <button onclick="calcularnota()">Calcular Nota</button>
+    <h2>2.2</h2>
+    <button onclick="comandodedecisao()">comando de decisao</button>
 <script>
     function calcularSalario() {
-
         let salario = Number.parseFloat(prompt("Digite o salário:"));
-        
         let imposto = Number.parseFloat(prompt("Digite o imposto de renda:"));
 
         let salarioLiquido = salario - imposto;
-
-        alert("O salário líquido é: " + salarioLiquido)
+        alert("O salário líquido é: " + salarioLiquido);
     }
+
     function calcularcarro() {
-        //calcular o consumo de kn por litro // 
+        let modelodocarro = prompt("Digite o modelo do seu carro:");
+        let km = parseFloat(prompt("Digite quantos quilômetros você percorreu:"));
+        let Lgasolina = parseFloat(prompt("Digite quantos litros de gasolina consumiu:"));
+        
+        let consumoporlitro = km / Lgasolina;
 
-        let modelodocarro= (prompt("digite o modelo do seu carro"));
-        let km = parseFloat(prompt("digite quantos kilometros voce percorreu"));
-        let Lgasolina = parseFloat(prompt("digite quantos litros de gasolina consumiu"));
-        consumoporlitro = km /Lgasolina;
-
-        alert("o consumo do carro" + modelodocarro + "é de "+ consumoporlitro.toFixed(2) + "KM/L")
+        alert("O consumo do carro " + modelodocarro + " é de " + consumoporlitro.toFixed(2) + " KM/L");
     }
-    
-</script>
+    function calcularnota() {
+        let nome = prompt("Digite o nome do aluno:");
+        let nota1 = Number.parseFloat(prompt("Digite a primeira nota:")); 
+        let nota2 = Number.parseFloat(prompt("Digite a segunda nota:")); 
+        let nota3 = Number.parseFloat(prompt("Digite a terceira nota:"));
+        let media = (nota1 + nota2 + nota3) / 3; 
 
+        alert("A média do aluno " + nome + " é " + media.toFixed(2));
+
+      if (media >= 6) {
+            alert("O aluno " + nome + " foi APROVADO  " + media.toFixed(2));
+        } else {
+            alert("O aluno " + nome + " foi REPROVADO  " + media.toFixed(2));
+        }
+    }
+function comandodedecisao() {
+    let nome = prompt("Digite o nome do aluno:");
+    let nota1 = Number.parseFloat(prompt("Digite a primeira nota:")); 
+    let nota2 = Number.parseFloat(prompt("Digite a segunda nota:")); 
+    let nota3 = Number.parseFloat(prompt("Digite a terceira nota:"));
+    let media = (nota1 + nota2 + nota3) / 3; 
+
+    alert("A média do aluno " + nome + " é " + media.toFixed(2));
+
+    if (media >= 6) {
+        // Se a média for 6 ou mais
+        alert("O aluno " + nome + " foi APROVADO: " + media.toFixed(2));
+    } else if (media >= 3) {
+        alert("O aluno " + nome + " está de RECUPERAÇÃO: " + media.toFixed(2));
+    } else {
+        alert("O aluno " + nome + " está REPROVADO: " + media.toFixed(2));
+    }
+}
+
+</script>
 </body>
 </html>
